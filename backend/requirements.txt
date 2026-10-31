@@ -1,0 +1,19 @@
+# API
+fastapi==0.115.12
+uvicorn[standard]==0.35.0
+python-multipart==0.0.20
+pydantic==2.11.5
+pydantic-settings>=2.4
+PyJWT>=2.8
+openai>=1.50  # client for any OpenAI-compatible endpoint (Groq, Ollama)
+
+# Data / classic ML
+numpy==1.26.4
+pandas==2.3.0
+scikit-learn==1.6.1
+joblib==1.5.1
+
+# Vision (legacy X-ray model, lazy-loaded)
+torch==2.8.0
+torchvision==0.23.0
+pillow==11.2.1

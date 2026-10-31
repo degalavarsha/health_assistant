@@ -1,0 +1,259 @@
+{
+  "features": [
+    "age",
+    "sex",
+    "bmi",
+    "waist_cm",
+    "sbp",
+    "dbp",
+    "total_chol",
+    "hdl"
+  ],
+  "train_cycles": [
+    "F",
+    "G",
+    "H",
+    "I",
+    "P"
+  ],
+  "test_cycles": [
+    "L"
+  ],
+  "population": "adults 20+, no prior diabetes diagnosis, HbA1c measured",
+  "targets": {
+    "diabetes_range": "HbA1c >= 6.5",
+    "prediabetes_plus": "HbA1c >= 5.7"
+  },
+  "results": {
+    "diabetes_range": {
+      "model": {
+        "n": 4948,
+        "prevalence": 0.0307,
+        "auroc": 0.805,
+        "auroc_ci95": [
+          0.777,
+          0.83
+        ],
+        "auprc": 0.109,
+        "brier": 0.0286,
+        "mean_predicted": 0.0408,
+        "auroc_survey_weighted": 0.848
+      },
+      "single_feature_auroc_train": {
+        "age": 0.68,
+        "sex": 0.512,
+        "bmi": 0.69,
+        "waist_cm": 0.714,
+        "sbp": 0.663,
+        "dbp": 0.568,
+        "total_chol": 0.535,
+        "hdl": 0.643
+      },
+      "operating_point": {
+        "threshold": 0.0441,
+        "test_sensitivity_specificity": [
+          0.836,
+          0.636
+        ]
+      },
+      "baseline_age_only": {
+        "n": 4948,
+        "prevalence": 0.0307,
+        "auroc": 0.646,
+        "auroc_ci95": [
+          0.612,
+          0.691
+        ],
+        "auprc": 0.047,
+        "brier": 0.0298,
+        "mean_predicted": 0.0428
+      },
+      "baseline_age_bmi_waist_logreg": {
+        "n": 4948,
+        "prevalence": 0.0307,
+        "auroc": 0.755,
+        "auroc_ci95": [
+          0.723,
+          0.785
+        ],
+        "auprc": 0.073,
+        "brier": 0.0297,
+        "mean_predicted": 0.0446
+      },
+      "leave_one_cycle_out_auroc": {
+        "F": 0.818,
+        "G": 0.779,
+        "H": 0.799,
+        "I": 0.786,
+        "P": 0.776
+      },
+      "subgroups_test": {
+        "sex=male": {
+          "n": 2184,
+          "events": 76,
+          "auroc": 0.819
+        },
+        "sex=female": {
+          "n": 2764,
+          "events": 76,
+          "auroc": 0.793
+        },
+        "age_band=40-59": {
+          "n": 1439,
+          "events": 45,
+          "auroc": 0.817
+        },
+        "age_band=60+": {
+          "n": 2096,
+          "events": 93,
+          "auroc": 0.714
+        },
+        "age_band=20-39": {
+          "n": 1413,
+          "events": 14,
+          "auroc": 0.914
+        },
+        "race=Other/multiracial": {
+          "n": 575,
+          "events": 16,
+          "auroc": 0.822
+        },
+        "race=Non-Hispanic White": {
+          "n": 3004,
+          "events": 74,
+          "auroc": 0.827
+        },
+        "race=Mexican American": {
+          "n": 322,
+          "events": 19,
+          "auroc": 0.832
+        },
+        "race=Non-Hispanic Black": {
+          "n": 548,
+          "events": 29,
+          "auroc": 0.761
+        },
+        "race=Other Hispanic": {
+          "n": 499,
+          "events": 14,
+          "auroc": 0.786
+        }
+      }
+    },
+    "prediabetes_plus": {
+      "model": {
+        "n": 4948,
+        "prevalence": 0.3122,
+        "auroc": 0.744,
+        "auroc_ci95": [
+          0.731,
+          0.76
+        ],
+        "auprc": 0.531,
+        "brier": 0.187,
+        "mean_predicted": 0.3776,
+        "auroc_survey_weighted": 0.756
+      },
+      "single_feature_auroc_train": {
+        "age": 0.718,
+        "sex": 0.509,
+        "bmi": 0.626,
+        "waist_cm": 0.649,
+        "sbp": 0.64,
+        "dbp": 0.547,
+        "total_chol": 0.557,
+        "hdl": 0.569
+      },
+      "operating_point": {
+        "threshold": 0.2804,
+        "test_sensitivity_specificity": [
+          0.89,
+          0.434
+        ]
+      },
+      "baseline_age_only": {
+        "n": 4948,
+        "prevalence": 0.3122,
+        "auroc": 0.684,
+        "auroc_ci95": [
+          0.668,
+          0.702
+        ],
+        "auprc": 0.442,
+        "brier": 0.2017,
+        "mean_predicted": 0.3798
+      },
+      "baseline_age_bmi_waist_logreg": {
+        "n": 4948,
+        "prevalence": 0.3122,
+        "auroc": 0.724,
+        "auroc_ci95": [
+          0.711,
+          0.741
+        ],
+        "auprc": 0.496,
+        "brier": 0.1934,
+        "mean_predicted": 0.3848
+      },
+      "leave_one_cycle_out_auroc": {
+        "F": 0.764,
+        "G": 0.756,
+        "H": 0.78,
+        "I": 0.767,
+        "P": 0.748
+      },
+      "subgroups_test": {
+        "sex=male": {
+          "n": 2184,
+          "events": 702,
+          "auroc": 0.719
+        },
+        "sex=female": {
+          "n": 2764,
+          "events": 843,
+          "auroc": 0.763
+        },
+        "age_band=40-59": {
+          "n": 1439,
+          "events": 453,
+          "auroc": 0.704
+        },
+        "age_band=60+": {
+          "n": 2096,
+          "events": 923,
+          "auroc": 0.647
+        },
+        "age_band=20-39": {
+          "n": 1413,
+          "events": 169,
+          "auroc": 0.708
+        },
+        "race=Other/multiracial": {
+          "n": 575,
+          "events": 192,
+          "auroc": 0.752
+        },
+        "race=Non-Hispanic White": {
+          "n": 3004,
+          "events": 820,
+          "auroc": 0.772
+        },
+        "race=Mexican American": {
+          "n": 322,
+          "events": 122,
+          "auroc": 0.776
+        },
+        "race=Non-Hispanic Black": {
+          "n": 548,
+          "events": 252,
+          "auroc": 0.686
+        },
+        "race=Other Hispanic": {
+          "n": 499,
+          "events": 159,
+          "auroc": 0.771
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+# secrets
+.env
+.env.local
+
+# environments / caches
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+mlruns/
+
+# large data and weights (use DVC / Git LFS / release storage)
+data/nhanes/
+data/knowledge/
+models/*.pth
+*.xpt
+
+# frontend
+frontend/node_modules/
+frontend/.next/
+
+# private / generated
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.onnx
+*.log
+.DS_Store
+*.env
+!.env.example
+!frontend/.env.example
+uploads/
+models/*
+!models/.gitkeep
